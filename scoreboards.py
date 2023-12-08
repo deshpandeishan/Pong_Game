@@ -4,20 +4,21 @@ score1 = Turtle()
 score2 = Turtle()
 
 
-# class MiddleLine(Turtle):
-#
-#     def __init__(self):
-#         super().__init__()
-#         self.goto(0, -900)
-#         self.color("red")
-#         self.draw_line()
-#
-#     def draw_line(self):
-#         self.color('white')
-#         self.fd(100)
-#         self.penup()
-#         self.fd(100)
-#         self.pendown()
+class MiddleLine(Turtle):
+
+    def __init__(self):
+        super().__init__()
+        self.goto(0, -350)
+        self.color("white")
+        self.lt(90)
+        self.draw_line()
+
+    def draw_line(self):
+        for _ in range(8):
+            self.fd(25)
+            self.penup()
+            self.fd(25)
+            self.pendown()
 
 
 class LeftScoreBoard(Turtle):
@@ -25,7 +26,7 @@ class LeftScoreBoard(Turtle):
     def __init__(self):
         super().__init__()
         self.screen.tracer(0)
-        self.goto(-100, 250)
+        self.goto(-100, 300)
         self.color("white")
         self.penup()
         self.score_1 = 0
@@ -45,7 +46,7 @@ class RightScoreBoard(Turtle):
 
     def __init__(self):
         super().__init__()
-        self.goto(100, 250)
+        self.goto(100, 300)
         self.color("white")
         self.penup()
         self.score_2 = 0
