@@ -11,9 +11,10 @@ class MiddleLine(Turtle):
         self.goto(0, -350)
         self.color("white")
         self.lt(90)
-        self.draw_line()
+        self.hideturtle()
+        self.draw_middle_line()
 
-    def draw_line(self):
+    def draw_middle_line(self):
         for _ in range(8):
             self.fd(25)
             self.penup()
@@ -25,7 +26,7 @@ class LeftScoreBoard(Turtle):
 
     def __init__(self):
         super().__init__()
-        self.screen.tracer(0)
+        self.screen.tracer(False)
         self.goto(-100, 300)
         self.color("white")
         self.penup()
@@ -46,6 +47,7 @@ class RightScoreBoard(Turtle):
 
     def __init__(self):
         super().__init__()
+        self.screen.tracer(False)
         self.goto(100, 300)
         self.color("white")
         self.penup()
