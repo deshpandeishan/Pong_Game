@@ -17,9 +17,14 @@ sb_1 = LeftScoreBoard()
 sb_2 = RightScoreBoard()
 middle_line = MiddleLine()
 
-paddle = Paddle()
+paddle1 = Paddle()
+paddle2 = Paddle()
 
-paddle.track_instructions()
+paddle1.setup(-400, 0)
+paddle1.track_left()
+
+paddle2.setup(400, 0)
+paddle2.track_right()
 
 screen.tracer(True)
 
