@@ -12,14 +12,12 @@ sb_1 = ScoreBoard(-100, 300)
 sb_2 = ScoreBoard(100, 300)
 middle_line = MiddleLine()
 
-paddle1 = Paddle()
-paddle2 = Paddle()
+paddle1 = Paddle(-400, 0)
+paddle2 = Paddle(400, 0)
 
-paddle1.setup(-400, 0)
-paddle1.track_left()
+paddle1.move_left()
 
-paddle2.setup(400, 0)
-paddle2.track_right()
+paddle2.move_right()
 screen.tracer(True)
 
 middle_line.draw_middle_line()
