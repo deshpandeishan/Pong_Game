@@ -8,7 +8,6 @@ class MiddleLine(Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
-        self.speed(100)
         self.screen.tracer(False)
         self.goto(0, -350)
         self.color("white")
