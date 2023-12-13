@@ -24,7 +24,7 @@ middle_line.draw_middle_line()
 
 game_on = True
 while game_on:
-    time.sleep(0.1)
+    time.sleep(ball.moving_speed)
     screen.update()
     ball.move()
 
@@ -40,11 +40,12 @@ while game_on:
         else:
             left_sb.update_scores()
 
-    if ball.xcor() > 400 or ball.xcor() < -400:
-        if ball.xcor() > 400:
-            left_sb.update_scores()
-        else:
-            right_sb.update_scores()
+    if ball.xcor() > 400:
+        left_sb.update_scores()
+        ball.reset_ball_cor()
+
+    if ball.xcor() < -400:
+        right_sb.update_scores()
         ball.reset_ball_cor()
 
 screen.exitonclick()
