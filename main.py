@@ -43,7 +43,7 @@ while game_on:
     if ball.xcor() > 400 or ball.xcor() < -400:
         if ball.xcor() > 400:
             left_sb.update_scores()
-        elif ball.xcor() > -400:
+        else:
             right_sb.update_scores()
         ball.reset_ball_cor()
 
