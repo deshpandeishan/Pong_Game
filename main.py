@@ -10,15 +10,15 @@ screen.title("Pong Game")
 screen.bgcolor("black")
 
 screen.tracer(0)
-sb_1 = ScoreBoard(-100, 300)
-sb_2 = ScoreBoard(100, 300)
+left_sb = ScoreBoard(-100, 300)
+right_sb = ScoreBoard(100, 300)
 middle_line = MiddleLine()
 
-paddle1 = Paddle(-400, 0)
-paddle2 = Paddle(400, 0)
+left_paddle = Paddle(-400, 0)
+right_paddle = Paddle(400, 0)
 
-paddle1.move_left()
-paddle2.move_right()
+left_paddle.move_left()
+right_paddle.move_right()
 ball = Ball()
 middle_line.draw_middle_line()
 
@@ -28,5 +28,16 @@ while game_on:
     screen.update()
     ball.move()
 
+    # This code will detect the ball's collision with wall (Top)
+    if ball.ycor() > 360 or ball.ycor() < -360:
+        ball.y_bounce()
+
+    # This code will detect and bounce back after the ball has collided with any of two paddles
+    if ball.distance(right_paddle) < 50 and ball.xcor() > 340 or ball.distance(left_paddle) < 50 and ball.xcor() < -340:
+        ball.x_bounce()
+        if ball.distance(right_paddle) < 50 and ball.xcor() > 340:
+            right_sb.update_scores()
+        else:
+            left_sb.update_scores()
 
 screen.exitonclick()

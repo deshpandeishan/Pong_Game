@@ -9,8 +9,16 @@ class Ball(Turtle):
         self.shape("circle")
         self.shapesize(2, 2)
         self.color("blue")
+        self.x_move = 10
+        self.y_move = 10
 
     def move(self):
-        x_cor = self.xcor() + 10
-        y_cor = self.ycor() + 10
-        self.goto(x_cor, y_cor)
+        new_x_cor = self.xcor() + self.x_move
+        new_y_cor = self.ycor() + self.y_move
+        self.goto(new_x_cor, new_y_cor)
+
+    def y_bounce(self):
+        self.y_move *= -1
+
+    def x_bounce(self):
+        self.x_move *= -1

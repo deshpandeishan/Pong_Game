@@ -33,9 +33,10 @@ class ScoreBoard(Turtle):
         self.score_1 = 0
         self.score_2 = 0
         self.scores = 0
-        self.update_scores(self.scores)
+        self.update_scores()
         self.hideturtle()
 
-    def update_scores(self, scores):
+    def update_scores(self):
+        self.clear()
         self.write(f"{self.scores}", align='center', font=('Courier', 30, 'normal'))
-
+        self.scores += 1
